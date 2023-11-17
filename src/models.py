@@ -105,9 +105,9 @@ class Planets(Base):
         vehicles = Column(Integer, ForeignKey('vehicles.id'), nullable=True)
 
         user = relationship(User)
-        characters = relationship(Characters)
-        planets = relationship(Planets)
-        vehicles = relationship(Vehicles)
+        characters = relationship(characters)
+        planets = relationship(planets)
+        vehicles = relationship(vehicles)
 
         def serialize(self):
             return{
@@ -117,9 +117,6 @@ class Planets(Base):
                 "vehicle_id": self.vehicle_id,
 
             }
-
-
-
 
 ## Draw from SQLAlchemy base
 render_er(Base, 'diagram.png')
